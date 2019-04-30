@@ -107,3 +107,12 @@ serviceAccount:
 
 # Expose Prometheus metrics
 prometheusMetrics: true
+
+
+# 1000000000 is one second as of the fact that they do not assume seconds
+# and multiply with time.Seconds from go for default but not for the config input
+# following set timeouts to 2 minutes:
+# upstreamTimeout: 120000000000
+# upstreamResponseHeaderTimeout: 120000000000
+# serverReadTimeout: 120000000000
+# serverWriteTimeout: 120000000000

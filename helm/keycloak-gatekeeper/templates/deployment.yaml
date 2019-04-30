@@ -76,6 +76,18 @@ spec:
             {{- if .Values.prometheusMetrics }}
             - --enable-metrics
             {{- end }}
+            {{- if .Values.upstreamTimeout }}
+            - --upstream-timeout={{ .Values.upstreamTimeout | quote }}
+            {{- end }}
+            {{- if .Values.upstreamResponseHeaderTimeout }}
+            - --upstream-response-header-timeout={{ .Values.upstreamResponseHeaderTimeout | quote }}
+            {{- end }}
+            {{- if .Values.serverReadTimeout }}
+            - --server-read-timeout={{ .Values.serverReadTimeout | quote }}
+            {{- end }}
+            {{- if .Values.serverWriteTimeout }}
+            - --server-write-timeout={{ .Values.serverWriteTimeout | quote }}
+            {{- end }}
           envFrom:
             - secretRef:
                 name: {{ include "keycloak-gatekeeper.fullname" . }}
