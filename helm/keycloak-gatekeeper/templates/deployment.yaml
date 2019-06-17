@@ -77,16 +77,16 @@ spec:
             - --enable-metrics
             {{- end }}
             {{- if .Values.upstreamTimeout }}
-            - --upstream-timeout={{ .Values.upstreamTimeout | quote }}
+            - --upstream-timeout={{ .Values.upstreamTimeout }}
             {{- end }}
             {{- if .Values.upstreamResponseHeaderTimeout }}
-            - --upstream-response-header-timeout={{ .Values.upstreamResponseHeaderTimeout | quote }}
+            - --upstream-response-header-timeout={{ .Values.upstreamResponseHeaderTimeout }}
             {{- end }}
             {{- if .Values.serverReadTimeout }}
-            - --server-read-timeout={{ .Values.serverReadTimeout | quote }}
+            - --server-read-timeout={{ .Values.serverReadTimeout }}
             {{- end }}
             {{- if .Values.serverWriteTimeout }}
-            - --server-write-timeout={{ .Values.serverWriteTimeout | quote }}
+            - --server-write-timeout={{ .Values.serverWriteTimeout }}
             {{- end }}
           envFrom:
             - secretRef:
